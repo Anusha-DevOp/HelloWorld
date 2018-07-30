@@ -39,7 +39,7 @@ pipeline {
 					error('Jenkinsfile is not found in this branch')
 				      }
 				
-				     elseif ("${params.branches}" == "branch2") {
+				     else if ("${params.branches}" == "branch2") {
 					bat 'mvn -f D:/DevOps/maven/parameter/com.parameter.sample clean package'}
 				 }
 			}
