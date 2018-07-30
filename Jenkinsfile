@@ -12,7 +12,7 @@ pipeline {
 		parameters {
 			choice(
 				name: 'branches',
-				choices:"master\nbranch1\nbranch2"
+				choices:"master\nbranch1\nbranch2",
 				description: 'Select the branch to checkout from')
 		}
 
