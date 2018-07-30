@@ -26,11 +26,11 @@ pipeline {
 
 
 	     stage('check branch') {
-			when {
-				expressioin { params.branches == 'branch2'}
-				}
-			steps {
-				bat 'mvn -f D:/DevOps/maven/parameter/com.parameter.sample clean package'}
+			//when {
+			//	expressioin { params.branches == 'branch2'}
+			//	}
+		//	steps {
+		//		bat 'mvn -f D:/DevOps/maven/parameter/com.parameter.sample clean package'}
 		
 			steps {
 				script {
@@ -38,6 +38,9 @@ pipeline {
 					currentBuild.result = 'ABORTED'
 					error('Jenkinsfile is not found in this branch')
 				      }
+				
+				     elseif ("${params.branches}" == "branch2") {
+					bat 'mvn -f D:/DevOps/maven/parameter/com.parameter.sample clean package'}
 				 }
 			}
 		}
