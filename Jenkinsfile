@@ -20,7 +20,7 @@ pipeline {
 	     stage('SCM checkout') {
 		steps{
 			echo "pulling changes from the branch ${params.branches}"
-			git url: 'https://github.com/Anusha-DevOp/HelloWorld.git', branch : "$params.branches"
+			git url: 'https://github.com/Anusha-DevOp/HelloWorld.git', branch : "${params.branches}"
 		}
 	      }
 
