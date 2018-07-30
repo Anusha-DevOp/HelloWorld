@@ -49,7 +49,7 @@ pipeline {
 
 	   //  stage('Execute Maven') {
 	//	steps {
-			bat 'mvn -f D:/DevOps/maven/parameter/com.parameter.sample //clean package'
+	//		bat 'mvn -f D:/DevOps/maven/parameter/com.parameter.sample //clean package'
 //		       }
   //            }
 
