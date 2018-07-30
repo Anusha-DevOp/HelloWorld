@@ -26,7 +26,7 @@ pipeline {
 
 	     stage('Execute Maven') {
 		steps {
-			bat 'mvn clean package'
+			mvn -f D:\DevOps\maven\parameter\com.parameter.sample clean package
 		       }
               }
 
