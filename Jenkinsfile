@@ -24,11 +24,31 @@ pipeline {
 		}
 	      }
 
-	     stage('Execute Maven') {
-		steps {
-			bat 'mvn -f D:/DevOps/maven/parameter/com.parameter.sample clean package'
-		       }
-              }
+
+	     stage('check branch') {
+			when {
+				expressioin { params.branches == 'branch2'}
+				}
+			steps {
+				bat 'mvn -f D:/DevOps/maven/parameter/com.parameter.sample clean package'}
+		
+			steps {
+				script {
+				     if ("${params.branches}" == "branch1") {
+					currentBuild.result = 'ABORTED'
+					error('Jenkinsfile is not found in this branch')
+				      }
+				 }
+			}
+		}
+
+
+
+	   //  stage('Execute Maven') {
+	//	steps {
+			bat 'mvn -f D:/DevOps/maven/parameter/com.parameter.sample //clean package'
+//		       }
+  //            }
 
 	     
 				
